@@ -17,28 +17,12 @@
     <link rel="stylesheet" href="../assets/extra-libs/datatables.net-bs4/css/responsive.dataTables.min.css">
     <!-- Custom CSS -->
     <link href="../dist/css/style.min.css" rel="stylesheet">
-
-    <!-- Multiple select plugin -->
-
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-    <style>
-        .select2-selection__arrow {
-            position: absolute;
-            top: 12px;
-            right: 10px;
-        }
-
-        .required::after {
-            content: "*";
-            color: red;
-        }
-    </style>
 </head>
 
 <body>
@@ -498,23 +482,27 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Tambah Pengajuan
+                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Daftar Alat/Bahan Keluar
                         </h4>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
                                     <li class="breadcrumb-item"><a href="index.html" class="text-muted">Alat Bahan</a>
                                     </li>
-                                    <li class="breadcrumb-item text-muted active" aria-current="page">Pengajuan</li>
+                                    <li class="breadcrumb-item text-muted active" aria-current="page">Keluar</li>
                                 </ol>
                             </nav>
                         </div>
                     </div>
-                    
+                    <div class="col-5 align-self-center">
+                        <div class="customize-input float-end">
+                            <a href="add-alat-masuk.html"><button class="btn btn-rounded btn-primary">Tambah
+                                </button></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            
+
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
@@ -533,49 +521,55 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <form>
-                                    <div class="row">
-                                        <div class="mb-4">
-                                            <label for="date" class="form-label required">Tanggal Pengajuan</label>
-                                            <input type="date" class="form-control" id="date" required>
-                                        </div>
-                                    
-                                        <div class="mb-4">
-                                            <label for="name" class="form-label required">Nama Alat/Bahan</label>
-                                            <input type="text" class="form-control" id="name" required>
-                                        </div>
-                                        <div class="mb-4">
-                                            <label for="merk" class="form-label required">Spesifikasi</label>
-                                        </div>
-                                        <div class="col-md-6 mb-4">
-                                            <input type="text" class="form-control" id="merk" required>
-                                            <label for="merk" class="form-label">Merk</label>
-                                        </div>
-                                        <div class="col-md-6 mb-4">
-                                            <input type="text" class="form-control" id="type" required>
-                                            <label for="type" class="form-label">Type/Model</label>
-                                        </div>
-                                        <div class="col-md-6 mb-4">
-                                            <input type="text" class="form-control" id="dimension" required>
-                                            <label for="dimension" class="form-label">Dimensi</label>
-                                        </div>
-                                        <div class="mb-4">
-                                            <label for="image" class="form-label required">Gambar</label>
-                                            <input type="file" class="form-control" id="image" required>
-                                        </div>
-                                        <div class="mb-4">
-                                            <label for="dana" class="form-label required">Sumber Dana</label>
-                                            <input type="text" class="form-control" id="dana" required>
-                                        </div>
 
-                                        <p class="form-text"><span class="text-danger">*</span> Harus diisi
-                                        </p>
-                                        <div class="d-flex justify-content-end">
-                                            <button class="btn btn-primary" type="submit">Tambahkan</button>
-                                        </div>
-                                    </div>
-                                </form>
+                                <div class="table-responsive">
+                                    <table id="tabel-peralatan-masuk"
+                                        class="table border table-striped table-bordered text-nowrap"
+                                        style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Tanggal</th>
+                                                <th>Kode A/B</th>
+                                                <th>Nama A/B</th>
+                                                <th>Volume</th>
+                                                <th>Satuan</th>
+                                                <th>Spesifikasi</th>
+                                                <th>Sumber Dana</th>
 
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>DD-MM-YY</td>
+                                                <td>BRG-001</td>
+                                                <td>Pemotong</td>
+                                                <td>volume</td>
+                                                <td>Kilogram</td>
+                                                <td>
+                                                    Merk: <i>SAMSUNG</i><br>
+                                                    Type/Model: <i>A01S</i><br>
+                                                    Tahun: <i>2018</i><br>
+                                                    Kapasitas: <i>50</i>
+                                                </td>
+                                                <td>Tata Usaha</td>
+                                            </tr>
+                                            <tr>
+                                                <td>DD-MM-YY</td>
+                                                <td>BRG-002</td>
+                                                <td>Pemotong</td>
+                                                <td>volume</td>
+                                                <td>hexagram</td>
+                                                <td>
+                                                    Merk: <i>XIAOMI</i><br>
+                                                    Type/Model: <i>9C</i><br>
+                                                    Tahun: <i>2018</i><br>
+                                                    Kapasitas: <i>50</i>
+                                                </td>
+                                                <td>Tata Usaha</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -631,32 +625,11 @@
     <script src="../assets/extra-libs/datatables.net-bs4/js/dataTables.responsive.min.js"></script>
     <script src="../dist/js/pages/datatable/datatable-basic.init.js"></script>
 
-    <!-- Select multiple plugin -->
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
-
     <script>
         $(document).ready(function () {
-            $('.js-example-basic-multiple').select2({
-                placeholder: 'Pilih atau masukkan kode barang',
-                allowClear: true, // menambahkan opsi untuk membersihkan pilihan
-                closeOnSelect: false, // membuat dropdown tetap terbuka setelah memilih opsi
-                // tambahkan kode tambahan di bawah ini untuk menyesuaikan tampilan atau perilaku
-            });
+            $('#tabel-peralatan-masuk').DataTable();
         });
     </script>
-    <script>
-        $(document).ready(function () {
-            $('.js-example-basic-multiple2').select2({
-                placeholder: 'Pilih atau masukkan jenis perbaikan',
-                allowClear: true, // menambahkan opsi untuk membersihkan pilihan
-                closeOnSelect: false, // membuat dropdown tetap terbuka setelah memilih opsi
-                // tambahkan kode tambahan di bawah ini untuk menyesuaikan tampilan atau perilaku
-            });
-        });
-    </script>
-
-
 </body>
 
 </html>

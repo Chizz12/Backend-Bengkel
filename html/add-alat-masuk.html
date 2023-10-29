@@ -498,14 +498,14 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Tambah Pengajuan
+                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Tambah Alat Bahan Masuk
                         </h4>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
                                     <li class="breadcrumb-item"><a href="index.html" class="text-muted">Alat Bahan</a>
                                     </li>
-                                    <li class="breadcrumb-item text-muted active" aria-current="page">Pengajuan</li>
+                                    <li class="breadcrumb-item text-muted active" aria-current="page">Masuk</li>
                                 </ol>
                             </nav>
                         </div>
@@ -536,13 +536,25 @@
                                 <form>
                                     <div class="row">
                                         <div class="mb-4">
-                                            <label for="date" class="form-label required">Tanggal Pengajuan</label>
+                                            <label for="date" class="form-label required">Tanggal Masuk</label>
                                             <input type="date" class="form-control" id="date" required>
                                         </div>
-                                    
                                         <div class="mb-4">
-                                            <label for="name" class="form-label required">Nama Alat/Bahan</label>
+                                            <label for="name" class="form-label required">Nama Peralatan</label>
                                             <input type="text" class="form-control" id="name" required>
+                                        </div>
+                                        <div class="mb-4">
+                                            <label for="volume" class="form-label required">Volume</label>
+                                            <input type="text" class="form-control" id="volume" required>
+                                        </div>
+                                        <div class="mb-4">
+                                            <label for="category" class="form-label required">Satuan</label>
+                                            <select class="js-example-basic-multiple form-control" name="states[]"
+                                                id="category" required>
+                                                <option value="AL">Kilogram</option>
+                                                <option value="NY">Centimeter</option>
+                                                <option value="VR">Liter</option>
+                                            </select>
                                         </div>
                                         <div class="mb-4">
                                             <label for="merk" class="form-label required">Spesifikasi</label>
@@ -558,10 +570,6 @@
                                         <div class="col-md-6 mb-4">
                                             <input type="text" class="form-control" id="dimension" required>
                                             <label for="dimension" class="form-label">Dimensi</label>
-                                        </div>
-                                        <div class="mb-4">
-                                            <label for="image" class="form-label required">Gambar</label>
-                                            <input type="file" class="form-control" id="image" required>
                                         </div>
                                         <div class="mb-4">
                                             <label for="dana" class="form-label required">Sumber Dana</label>
@@ -638,17 +646,7 @@
     <script>
         $(document).ready(function () {
             $('.js-example-basic-multiple').select2({
-                placeholder: 'Pilih atau masukkan kode barang',
-                allowClear: true, // menambahkan opsi untuk membersihkan pilihan
-                closeOnSelect: false, // membuat dropdown tetap terbuka setelah memilih opsi
-                // tambahkan kode tambahan di bawah ini untuk menyesuaikan tampilan atau perilaku
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function () {
-            $('.js-example-basic-multiple2').select2({
-                placeholder: 'Pilih atau masukkan jenis perbaikan',
+                placeholder: 'Pilih atau masukkan satuan A/B',
                 allowClear: true, // menambahkan opsi untuk membersihkan pilihan
                 closeOnSelect: false, // membuat dropdown tetap terbuka setelah memilih opsi
                 // tambahkan kode tambahan di bawah ini untuk menyesuaikan tampilan atau perilaku
